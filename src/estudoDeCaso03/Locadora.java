@@ -4,5 +4,20 @@ package estudoDeCaso03;
         Os filmes serão separados de acordo com seu gênero e sua faixa etária.
         As fitas desse filme também possuem um número identificador, pois o mesmo filme pode existir em diversas fitas diferentes.
         As fitas são os objetos as serem disponibilizados pelos clientes que deverão ser cadastrados na loja no ato da retirada do empréstimo e para controle da devolução.*/
-public class Exercicio03 {
+public class Locadora {
+    public static void main(String[] args) {
+        Fitas fitas = new Fitas();
+        fitas.setGenero(Genero.TERROR);
+        fitas.setFaixaEtaria("18 anos");
+        fitas.setNumeroIdentificador(randomInt(1, 100));
+        System.out.println(fitas.getGenero().getDescription());
+        System.out.println(fitas.getFaixaEtaria());
+        System.out.println(fitas.getNumeroIdentificador());
+
+    }
+
+    private static int randomInt(int min, int max) {
+        return (int) (Math.random() * (max - min + 1)) + min;
+    }
+
 }
